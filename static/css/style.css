@@ -40,6 +40,11 @@ nav{
     margin-top: 300px;
 }
 
+.welcome_title_tablet{
+    margin-top: 250px;
+    background-color: rgba(0, 150, 136, 0.4);
+}
+
 .breaker{
     background-color: teal;
     height: 150px;
@@ -67,6 +72,7 @@ nav{
     padding-left: 50px!important;
     padding-right: 50px!important;
     color: #757575;
+    margin-bottom: 10px;
 }
 
 .values-icon i{
@@ -85,6 +91,10 @@ nav{
 .values_data_link, .values_data_link:hover, .values_data_link:active, .values_data_link:visited{
     color: #757575;
     text-decoration: none;
+}
+
+.parallax-container{
+    height: 200px;
 }
 
 .services{

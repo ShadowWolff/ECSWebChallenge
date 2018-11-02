@@ -1,5 +1,8 @@
 import csv
 import os
+import numpy as np
+import matplotlib.pyplot as plt
+
 import django
 from django.conf import settings
 
@@ -45,11 +48,19 @@ def process( row ):
 with open( "data_final.csv" ) as f:
     csv_reader = csv.reader( f )
     i = 0
+    x = np.empty((1,10), dtype=float)
+    y = np.empty((1,10), dtype=float)
+
     for row in csv_reader:
 
         if i != 0:
-            process(row)
+            # process(row)
+            np.append(x, float(row[9]))
+            np.append(y, float(row[10]))
 
         i = i+1
-        if i > 1000:
+        if i >10000:
             break
+
+plt.scatter(x,y)
+plt.show()
