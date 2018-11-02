@@ -1,0 +1,120 @@
+footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #008080;
+}
+nav{
+    background-color: #008080;
+    padding: 10px;
+    height: 80px;
+}
+
+.navbar{
+    margin-bottom: 0px;
+}
+
+
+.page-footer{
+    background-color: #008080;
+}
+
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: -5px;
+}
+
+.landing_photo{
+    background-image: url("/static/images/landing.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+}
+
+.welcome_text{
+    color: white;
+}
+
+.welcome_title{
+    margin-top: 300px;
+}
+
+.breaker{
+    background-color: teal;
+    height: 150px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: -20px;
+}
+
+.action_button{
+    margin-top: 20px;
+}
+
+.values{
+    padding-bottom: 20px;
+}
+
+.values_title_container{
+    text-align: center;
+    padding-bottom: 20px!important;
+    color:#757575;
+}
+
+.values_container{
+    text-align: center;
+    padding-left: 50px!important;
+    padding-right: 50px!important;
+    color: #757575;
+}
+
+.values-icon i{
+    font-size: 100px;
+}
+
+.values-title{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.values-description{
+    font-size: 16px;
+}
+
+.values_data_link, .values_data_link:hover, .values_data_link:active, .values_data_link:visited{
+    color: #757575;
+    text-decoration: none;
+}
+
+.services{
+    margin-bottom: 50px;
+}
+
+.services_title_container{
+    text-align: center;
+    color: #757575;
+}
+
+.services_colapsible{
+    color: #757575;
+}
+
+.card{
+    text-align: center;
+    min-height: 270px;
+}
+
+.card-image i{
+    font-size: 100px;
+    margin-top: 10px;
+}
+
+#map {
+    height: 600px;
+}
+
+.contact_title{
+    text-align: center;
+    color: #757575;
+}

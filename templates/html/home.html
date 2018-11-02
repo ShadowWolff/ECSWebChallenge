@@ -1,0 +1,256 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class = "container-fluid">
+
+        <!-- landing image -->
+        <div class = "row">
+            <div class ="landing_photo col s12  ">
+
+                <div class = "col offset-s1 s4 welcome_title">
+
+                    <h2 class = "welcome_text"> Welcome to Datasight ! </h2>
+                    <h4 class = "welcome_text"> Giving insight into data provided by the DEV ECS since, ... well... 01/10/2018 </h4>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- breaker -->
+        <div class = "row breaker">
+
+            <div class = "s12">
+
+                <div class = "col s8 offset-s1">
+                    <h4 class = "welcome_text"> Give it a go and start exploring this 8 million lines long CSV ! </h4>
+                </div>
+
+                <div class = "col s3 action_button">
+
+                    <a class=" waves-effect waves-light btn-large" style=" background-color: #448AFF" href = "/analyze/">
+                        <i class="material-icons right">search</i>Explore Data
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Values-->
+        <div class = "row values">
+
+            <div class="values_title_container">
+                <h1>Values</h1>
+            </div>
+
+            <div class="col l3 values_container">
+                <div class="values-icon">
+                    <i class="material-icons">phone_android</i>
+                </div>
+                <div class="values-title">Mobile first</div>
+
+                <div class="values-description">
+                    Here at Datasight we take mobile experience very seriously. That's why we designed with a mentality of mobile-first experience for our users.
+                </div>
+            </div>
+
+            <div class="col l3 values_container">
+                <div class="values-icon">
+                    <i class="material-icons">code</i>
+                </div>
+                <div class="values-title">Back end implementation</div>
+
+                <div class="values-description">
+                    We have an automatically Django generated backend that allows us to edit our data, because 4 days it's not enough for a 1 man team to finish an entire platform. Or is it ? ...
+                </div>
+            </div>
+
+            <div class="col l3 values_container">
+                <div class="values-icon">
+                    <i class="material-icons">cloud_download</i>
+                </div>
+                <div class="values-title">Open data</div>
+
+                <div class="values-description">
+                    All of our data is kindly provided by the DEV ECS team, and is open sources. You can find it
+                    <a class = "values_data_link" href="https://www.dropbox.com/s/dx19q0jcurx99ts/data_final.csv.zip?dl=0"> here </a>
+                </div>
+            </div>
+
+            <div class="col l3 values_container">
+                <div class="values-icon">
+                    <i class="material-icons">lock</i>
+                </div>
+                <div class="values-title">Data security</div>
+
+                <div class="values-description">
+                    Even though we just declared that we use open source dummy-data, that doesn't mean that we don't take extra steps to insure the highest standards of security. That's exactly why every data that can lead to a person such as the names used, are fake and generated with a python library.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- breaker with parralax -->
+        <div class = "row">
+            <div class="parallax-container">
+                <div class="parallax"><img src="{% static 'images/paralax.jpg' %}"></div>
+            </div>
+        </div>
+
+        <!-- Services -->
+        <div class = "row services">
+
+            <div class="services_title_container">
+                <h1>Services</h1>
+            </div>
+
+            <div class = "col s10 offset-s1">
+
+                <div class = "col s12 m4">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="material-icons">insert_chart</i>
+
+                        </div>
+                        <span class="card-title">Data analysis</span>
+                        <div class="card-content">
+                            <p>
+                                We use a multitude of libraries and data analysis tools to give you the most fancy graphs we can think of. Be it either a time-dependent graph, a scatter plot or a pie chart, we have them all.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class = "col s12 m4">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="material-icons">desktop_windows</i>
+
+                        </div>
+                        <span class="card-title">Machine Learning</span>
+                        <div class="card-content">
+                            <p>
+                                We use the power of machine learning to really bring insight into this data and provide estimates about any new incoming data.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class = "col s12 m4">
+
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="material-icons">map</i>
+
+                        </div>
+                        <span class="card-title">Heatmaps</span>
+                        <div class="card-content">
+                            <p>
+                                We use Google's API to really bring sense and visuals into this, by showing the routes and creating heatmaps.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        </div>
+
+        <!-- google map -->
+        <div class = "row">
+
+            <div id="map"></div>
+            <script type="text/javascript"
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DoguIu91HZB3c_osKxcVsu2beSDoSDQ&libraries=visualization">
+            </script>
+
+            <!-- change this into another js file -->
+            <script>
+
+            var heatMapData = [
+              {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
+              new google.maps.LatLng(37.782, -122.445),
+              {location: new google.maps.LatLng(37.782, -122.443), weight: 2},
+              {location: new google.maps.LatLng(37.782, -122.441), weight: 3},
+              {location: new google.maps.LatLng(37.782, -122.439), weight: 2},
+              new google.maps.LatLng(37.782, -122.437),
+              {location: new google.maps.LatLng(37.782, -122.435), weight: 0.5},
+
+              {location: new google.maps.LatLng(37.785, -122.447), weight: 3},
+              {location: new google.maps.LatLng(37.785, -122.445), weight: 2},
+              new google.maps.LatLng(37.785, -122.443),
+              {location: new google.maps.LatLng(37.785, -122.441), weight: 0.5},
+              new google.maps.LatLng(37.785, -122.439),
+              {location: new google.maps.LatLng(37.785, -122.437), weight: 2},
+              {location: new google.maps.LatLng(37.785, -122.435), weight: 3}
+            ];
+
+            var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: sanFrancisco,
+                zoom: 13,
+                mapTypeId: 'satellite'
+            });
+
+            var heatmap = new google.maps.visualization.HeatmapLayer({
+                data: heatMapData
+            });
+            heatmap.setMap(map);
+
+            </script>
+
+        </div>
+
+        <!-- contact form -->
+        <div class = "row">
+
+            <h1 class = "contact_title"> Contact </h1>
+
+            <form class="col s10 offset-s1">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_first_name" type="text" class="validate">
+                        <label for="icon_first_name">First Name</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="icon_last_name" type="text" class="validate">
+                        <label for="icon_last_name">Last Name</label>
+                    </div>
+
+
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="icon_email" type="tel" class="validate">
+                        <label for="icon_email">Email</label>
+                    </div>
+                </div>
+                <center>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </center>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+{% endblock %}
