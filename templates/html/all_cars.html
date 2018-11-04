@@ -1,0 +1,29 @@
+{% extends "base_with_sidebar.html" %}
+
+{% block page_content %}
+    <div class="row">
+        {% for key, car in cars.items %}
+
+            {% if car.nr_of_routes > 1 %}
+
+                <div class="col s12 m6 l4">
+                  <div class="card driver-card teal darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Car #{{ car.car_id }}</span>
+                        <p> Total of {{car.nr_of_routes}} routes </p>
+                        <p> In use since {{ car.first_route|date:"SHORT_DATE_FORMAT" }} </p>
+                        <p> Total of {{car.nr_of_drivers}} drivers</p>
+                        <p> Drove {{car.km_drove}} KM </p>
+                    </div>
+                    <div class="card-action ">
+                      <a href="{{car.car_id}}">Stats for this car</a>
+                    </div>
+                  </div>
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% endblock %}
+

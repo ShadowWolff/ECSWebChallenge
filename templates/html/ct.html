@@ -1,0 +1,20 @@
+{% extends "base_with_sidebar.html" %}
+
+{% load static %}
+
+{% block page_content %}
+
+
+    <div class = "row s12 chart_graph_container">
+
+        <svg id = "chart_graph"></svg>
+
+    </div>
+
+
+<script src = "{% static 'js/graph_creation.js' %} "></script>
+<script>
+    createChartGraph(  [] );
+</script>
+
+{% endblock %}

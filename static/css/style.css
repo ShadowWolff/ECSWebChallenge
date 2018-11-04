@@ -10,8 +10,19 @@ nav{
     height: 80px;
 }
 
-.navbar{
-    margin-bottom: 0px;
+.navbar-fixed{
+
+    z-index: 999!important;
+}
+
+body{
+    height: 100vh!important;
+}
+
+.main-content{
+    min-height: 100%;
+    height: auto;
+    position: relative;
 }
 
 
@@ -23,7 +34,19 @@ nav{
     padding-left: 0px;
     padding-right: 0px;
     margin-top: -5px;
+    height: 100%;
 }
+
+.content-analyze {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  .content-analyze {
+    padding-left: 0;
+  }
+}
+
 
 .landing_photo{
     background-image: url("/static/images/landing.jpeg");
@@ -37,24 +60,19 @@ nav{
 }
 
 .welcome_title{
-    margin-top: 300px;
+    margin-top: 200px;
 }
 
 .welcome_title_tablet{
-    margin-top: 250px;
+    margin-top: 175px;
     background-color: rgba(0, 150, 136, 0.4);
 }
 
 .breaker{
     background-color: teal;
-    height: 150px;
     padding-top: 25px;
     padding-bottom: 25px;
     margin-top: -20px;
-}
-
-.action_button{
-    margin-top: 20px;
 }
 
 .values{
@@ -124,7 +142,47 @@ nav{
     height: 600px;
 }
 
+#map_pickup{
+    min-height: 70vh;
+}
+
+#map_drop{
+    min-height: 70vh;
+}
+
 .contact_title{
     text-align: center;
     color: #757575;
+}
+
+.sidenav{
+    z-index: 998!important;
+    padding-top: 100px;
+    background-color: #008080;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.sidenav > li > a, .sidenav > li > a > i {
+
+    color: white !important;
+}
+
+.main-analyze-content{
+    margin-top: 30px;
+}
+
+.driver-card{
+    text-align: left;
+    min-height: auto;
+}
+
+.driver-card a{
+
+    color: white!important;
+}
+
+svg{
+    width: 100%;
+    height: auto;
 }

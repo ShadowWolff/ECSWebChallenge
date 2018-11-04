@@ -16,10 +16,10 @@
 
                 </div>
 
-                <div class = " col s10 offset-s1 welcome_title_tablet hide-on-large-only">
+                <div class = " col s12 welcome_title_tablet show-on-medium  hide-on-med-and-up">
 
-                    <h2 class = "welcome_text"> Welcome to Datasight ! </h2>
-                    <h4 class = "welcome_text"> Giving insight into data provided by the DEV ECS since, ... well... 01/10/2018 </h4>
+                    <h2 class = "welcome_text">Datasight ! </h2>
+                    <h4 class = "welcome_text hide-on-small-only"> Giving insight into data provided by the DEV ECS since, ... well... 01/10/2018 </h4>
 
                 </div>
 
@@ -29,18 +29,26 @@
         <!-- breaker -->
         <div class = "row breaker">
 
-            <div class = "s12">
+            <div class = "s12 valign-wrapper">
 
-                <div class = "col s8 offset-s1">
+                <div class = "col s8 offset-s1 hide-on-small-only m8 l10">
                     <h4 class = "welcome_text"> Give it a go and start exploring this 8 million lines long CSV ! </h4>
                 </div>
 
-                <div class = "col s3 action_button">
+                <div class = "col s3 hide-on-small-only action_button m4 l2">
 
                     <a class=" waves-effect waves-light btn-large" style=" background-color: #448AFF" href = "/analyze/">
                         <i class="material-icons right">search</i>Explore Data
                     </a>
 
+                </div>
+
+                <div class = "col s12 hide-on-med-and-up ">
+                    <center>
+                        <a class=" waves-effect waves-light btn-large" style=" background-color: #448AFF" href = "/analyze/">
+                            <i class="material-icons right">search</i>Explore Data
+                        </a>
+                    </center>
                 </div>
 
             </div>
@@ -220,19 +228,19 @@
         </div>
 
         <!-- contact form -->
-        <div class = "row">
+        <div class = "row section scrollspy" id = "contact">
 
             <h1 class = "contact_title"> Contact </h1>
 
             <form class="col s10 offset-s1">
                 <div class="row">
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="icon_first_name" type="text" class="validate">
                         <label for="icon_first_name">First Name</label>
                     </div>
 
-                    <div class="input-field col s6">
+                    <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="icon_last_name" type="text" class="validate">
                         <label for="icon_last_name">Last Name</label>
