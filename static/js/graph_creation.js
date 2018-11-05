@@ -1,17 +1,20 @@
-function createPieGraph( data ) {
+function createPieGraph( data, id, container, type = "percent" ) {
     nv.addGraph(function() {
-      width = $(".pie_graph_container").width();
-      height =$(".pie_graph_container").height();
+      width = $("." + container).width();
+      height =$("." + container).height();
 
       var chart = nv.models.pieChart()
           .x(function(d) { return d.label })
           .y(function(d) { return d.value })
           .showLabels(true)
-          .labelType("percent")
-          .donut(true)
           .width(width).height(height);
 
-      d3.select("#pie_graph")
+      if(type != "number")
+          chart.labelType("percent");
+      else
+          chart.labelType("value");
+
+      d3.select("#"+id)
         .attr("width", "400px")
         .attr("height", "400px")
         .attr('viewBox','0 0 '+width+' '+height)
@@ -24,10 +27,10 @@ function createPieGraph( data ) {
     });
 }
 
-function createChartGraph( data, date_display )
+function createChartGraph( data, date_display, chart_id, container, display_date=true )
 {
     nv.addGraph(function () {
-        width = $(".chart_graph_container").width();
+        width = $("." + container).width();
         height = 0.5 * width;
 
         var chart = nv.models.lineChart()
@@ -39,18 +42,24 @@ function createChartGraph( data, date_display )
             .showXAxis(true)
             .width(width-40).height(height);
 
-        chart.xAxis     //Chart x-axis settings
-              .axisLabel('Day')
-              .tickFormat(function(d) {
-                return d3.time.format(date_display)(new Date(d))
-              });
+        if(display_date) {
+            chart.xAxis     //Chart x-axis settings
+                .axisLabel('Day')
+                .tickFormat(function (d) {
+                    return d3.time.format(date_display)(new Date(d))
+                });
+        }else{
+          chart.xAxis     //Chart x-axis settings
+              .axisLabel('Hour')
+              .tickFormat(d3.format(',r'));
+        }
 
           chart.yAxis     //Chart y-axis settings
               .axisLabel('Routes')
               .tickFormat(d3.format('.0f'));
 
 
-        d3.select('#chart_graph')
+        d3.select('#'+chart_id)
             .datum(data)
             .attr('preserveAspectRatio','xMinYMin')
             .attr('viewBox','0 0 '+width+' '+height)

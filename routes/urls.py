@@ -7,7 +7,7 @@ urlpatterns = [
     path('analyze/', views.analyze, name='analyze'),
     path('analyze/common-area', views.common_area, name='cpa'),
 
-    path('analyze/highest-pay', views.analyze, name='analyze'),
+    path('analyze/highest-pay', views.pay, name='analyze'),
     path('analyze/drivers/', views.drivers, name='analyze'),
     path('analyze/drivers/<str:driver_id>', views.driver, name='analyze'),
 

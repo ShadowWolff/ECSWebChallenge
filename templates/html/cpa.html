@@ -36,26 +36,6 @@
             pickupData = []
             dropData = []
 
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-
-                    data = JSON.parse(this.response)["routes"];
-
-                    for( var i = 0; i < data.length; i++ ){
-
-                        console.log(parseFloat( data[i]["pickup_long"] ));
-
-                        pickupPoint = new google.maps.LatLng( parseFloat( data[i]["pickup_lat"] ), parseFloat( data[i]["pickup_long"]));
-                        dropoffPoint = new google.maps.LatLng( parseFloat(data[i]["dropoff_lat"]) , parseFloat(data[i]["dropoff_long"]) );
-
-                        pickupData[i] = pickupPoint;
-                        dropData[i] = dropoffPoint;
-                    }
-
-                }
-            };
-
             mapPickup = new google.maps.Map(document.getElementById('map_pickup'), {
               center: centerPickup,
               zoom: 7,
@@ -71,6 +51,31 @@
 
             });
 
+
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+
+                    data = JSON.parse(this.response)["routes"];
+
+                    for( var i = 0; i < data.length; i++ ){
+
+                        pickupPoint = new google.maps.LatLng( parseFloat( data[i]["pickup_lat"] ), parseFloat( data[i]["pickup_long"]));
+                        dropoffPoint = new google.maps.LatLng( parseFloat(data[i]["dropoff_lat"]) , parseFloat(data[i]["dropoff_long"]) );
+
+                        pickupData[i] = pickupPoint;
+                        dropData[i] = dropoffPoint;
+                    }
+
+
+                }
+
+            };
+
+            xhttp.open("GET", url, true);
+            xhttp.send(null);
+
             var heatmapPick = new google.maps.visualization.HeatmapLayer({
               data: pickupData,
                 map:mapPickup,
@@ -83,8 +88,8 @@
             heatmapPick.setMap(heatmapPick.getMap())
             heatmapDrop.setMap(heatmapDrop.getMap())
 
-            xhttp.open("GET", url, true);
-            xhttp.send();
+
+
         }
 
     create_graph( "http://localhost:8000/endpoints/routes");

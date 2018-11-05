@@ -74,7 +74,7 @@
                             }
                         )
                     }
-                    createPieGraph(data_arr);
+                    createPieGraph(data_arr, "pie_graph", "pie_graph_container");
                 }else{
 
                     arr = []
@@ -95,7 +95,7 @@
 
                         }
                     ]
-                    createChartGraph(data_arr, "%d/%m/%y");
+                    createChartGraph(data_arr, "%d/%m/%y", "chart_graph", "chart_graph_container");
                 }
             }
         };

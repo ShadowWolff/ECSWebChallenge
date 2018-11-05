@@ -121,3 +121,7 @@ def route(request, route_id):
         "route": route
     }
     return render(request, "html/route.html", context)
+
+
+def pay(request):
+    return render(request, "html/highest_pay.html", {})

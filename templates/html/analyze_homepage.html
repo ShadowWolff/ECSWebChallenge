@@ -5,18 +5,40 @@
 
     <div class = "row">
         <div class="col s12">
-            <div class="col s12 m6  pie_graph_container">
-                <svg id = "pie_graph"></svg>
+            <div class="col s12 m6 l4  payment_method_pie_graph_container">
+                <h3> Pay methods </h3>
+                <svg id = "payment_method_pie_graph"></svg>
+            </div>
+            <div class="col s12 m6 l4 travels_number_pie_graph_container">
+                <h3> Distribution of passengers </h3>
+                <svg id = "travels_number_pie_graph"></svg>
+            </div>
+            <div class="col s12 m6 l4  payment_dristribution_pie_graph_container">
+                <h3> Distribution of payments </h3>
+                <svg id = "payment_dristribution_pie_graph"></svg>
             </div>
         </div>
     </div>
 
     <div class = "row">
         <div class = "col s12 chart_graph_container">
+            <h3>Distribution of routes</h3>
             <svg id = "chart_graph"></svg>
         </div>
     </div>
 
+    <div class = "row">
+        <div class = "col s12 chart_graph_pick_drop_24h_container">
+            <h3> Distribution of pickups and dropoffs by hour </h3>
+            <svg id = "chart_graph_pick_drop_24h"></svg>
+        </div>
+    </div>
+    <div class = "row">
+        <div class = "col s12 chart_graph_pass_24h_container">
+            <h3> Distribution of the type of passengers by hour </h3>
+            <svg id = "chart_graph_pass_24h"></svg>
+        </div>
+    </div>
 
     <script src = "{% static 'js/graph_creation.js' %} "></script>
     <script>
@@ -73,7 +95,7 @@
 
                             }
                         ]
-                        createChartGraph(data_arr, "%d/%m/%y");
+                        createChartGraph(data_arr, "%d/%m/%y", "chart_graph","chart_graph_container");
                     }
 
                 };
@@ -83,24 +105,36 @@
 
             create_graph("chart", "http://localhost:8000/endpoints/routes");
         }
-        function createPaymentPie(){
-            function create_graph( url ) {
+
+        function createPies(){
+            function create_graph( url, field, id, container, graph_type ) {
                 var xhttp = new XMLHttpRequest();
                 xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         data_arr = []
-                        data = JSON.parse(this.response)["data"]["pay_type"];
-
-                        console.log( data );
+                        data_graph = []
+                        data = JSON.parse(this.response)["data"][field];
 
                         for (key in data) {
                             obj = data[key];
+
                             for( type in obj ){
-                                data_arr[ obj["type"] ] = 1
+                                if( data_arr[ type ] === undefined)
+                                    data_arr[ type ] = 0
+                                data_arr[ type ] += obj[type]
                             }
                         }
-                        console.log(data_arr);
-                        createPieGraph(data_arr);
+
+                        for( key in data_arr ){
+                            data_graph.push(
+                                {
+                                    "label": key,
+                                    "value": data_arr[key]
+                                }
+                            )
+                        }
+
+                        createPieGraph(data_graph, id, container, graph_type );
 
 
                     }
@@ -109,12 +143,65 @@
                 xhttp.send();
             }
 
-            create_graph("http://localhost:8000/endpoints/general");
+            create_graph("http://localhost:8000/endpoints/general", "pay_type", "payment_method_pie_graph", "payment_method_pie_graph_container" );
+            create_graph("http://localhost:8000/endpoints/general", "pass_type", "travels_number_pie_graph", "travels_number_pie_graph_container" );
+            create_graph("http://localhost:8000/endpoints/general", "pay_amount", "payment_dristribution_pie_graph", "payment_dristribution_pie_graph_container", "number" );
+            create_graph("http://localhost:8000/endpoints/general", "pay_type", "pie_graph", "pie_graph_container" );
         }
 
+        function createDistributions(){
+
+            function create_graph( url ) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        data = JSON.parse(this.response)["data"];
+
+                        arrPick = []
+                        arrDrop = []
+                        arrSgPass = []
+                        arrGrPass = []
+
+                        for(key in data["pick"]){
+                            arrPick.push( {x:parseInt(key), y:data["pick"][key]} )
+                            arrDrop.push( {x:parseInt(key), y:data["drop"][key]} )
+                            arrSgPass.push( {x:parseInt(key), y:data["pass_type"][key]["sg"]} )
+                            arrGrPass.push( {x:parseInt(key), y:data["pass_type"][key]["gr"]} )
+                        }
+
+                        data_arr = [
+                            {
+                                "values": arrPick,
+                                "key": "Pickup"
+                            },
+
+                            {
+                                "values": arrDrop,
+                                "key": "Dropoff"
+                            }
+                        ]
+                        pass_arr = [
+                            { "values" : arrSgPass, "key" : "Single Passengers" },
+                            { "values" : arrGrPass, "key" : "Groups of Passengers" },
+                        ]
+
+                        createChartGraph(data_arr, "", "chart_graph_pick_drop_24h","chart_graph_pick_drop_24h_container", false);
+                        createChartGraph(pass_arr, "", "chart_graph_pass_24h","chart_graph_pass_24h_container", false);
+                    }
+
+                };
+                xhttp.open("GET", url, true);
+                xhttp.send();
+
+            }
+
+            create_graph( "http://localhost:8000/endpoints/general" )
+
+        }
 
         createTravelChart();
-        createPaymentPie();
+        createPies();
+        createDistributions();
 
     </script>
 

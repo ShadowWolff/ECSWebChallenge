@@ -1,0 +1,63 @@
+{% extends "base_with_sidebar.html" %}
+
+
+{% block page_content %}
+
+    <div class = "row">
+        <div class = "col s12">
+            <h2> Distribution of payment </h2>
+            <div id="map_payment"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DoguIu91HZB3c_osKxcVsu2beSDoSDQ&libraries=visualization">
+    </script>
+
+    <script>
+        function create_graph( url ) {
+            var center = new google.maps.LatLng(40.756519, -73.975456);
+            heatMapData = []
+
+            map = new google.maps.Map(document.getElementById('map_payment'), {
+              center: center,
+              zoom: 7,
+              mapTypeId: google.maps.MapTypeId.HYBRID,
+              labels:true
+
+            });
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = JSON.parse(this.response)["routes"];
+
+                    for( var i = 0; i < data.length; i++ ){
+
+                        lat = parseFloat( data[i]["pickup_lat"])
+                        long = parseFloat( data[i]["pickup_long"])
+
+                        point = new google.maps.LatLng(lat , long);
+                        heatMapData[i] = { location:point, weight:data[i]["pay"] }
+                    }
+                }
+
+            };
+
+            xhttp.open("GET", url, true);
+            xhttp.send();
+
+            var heatmap = new google.maps.visualization.HeatmapLayer({
+                data: heatMapData,
+                map:map
+            });
+
+            heatmap.setMap(heatmap.getMap())
+        }
+
+        create_graph( "http://localhost:8000/endpoints/routes");
+
+
+    </script>
+
+{% endblock %}
