@@ -58,8 +58,52 @@
 
 <script src = "{% static 'js/graph_creation.js' %} "></script>
 <script>
-    createPieGraph([]);
-    createChartGraph([]);
+    function create_graph( type, url ) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                data = JSON.parse(this.response);
+                data_arr = []
+                if( type == "pie" ) {
+                    for (key in data) {
+                        data_arr.push(
+                            {
+                                "label": key,
+                                "value": data[key]
+                            }
+                        )
+                    }
+                    createPieGraph(data_arr);
+                }else{
+
+                    arr = []
+                    for (var i =0; i < data["routes"].length; i++ ) {
+
+                        obj = data["routes"][i];
+                        date = Object.keys( obj )[0];
+                        routes = obj[date];
+
+
+                        arr.push( { x : Date.parse( date ), y: parseInt( routes ) } )
+                    }
+
+                    data_arr = [
+                        {
+                            "values": arr,
+                            "key": "Routes"
+
+                        }
+                    ]
+                    createChartGraph(data_arr, "%d/%m/%y");
+                }
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+
+    create_graph("pie", "http://localhost:8000/endpoints/cash_card/car/{{ car_id }}");
+    create_graph("chart", "http://localhost:8000/endpoints/routes_count/car/{{ car_id }}");
 </script>
 
 {% endblock %}

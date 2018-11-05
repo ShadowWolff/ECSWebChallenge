@@ -107,5 +107,17 @@ def common_area( request ):
     return render( request, "html/cpa.html", {} )
 
 
-def common_time( request ):
-    return render( request, "html/ct.html", {} )
+def routes(request):
+    routes = RoutesModel.objects.all()
+    context = {
+        "routes" : routes
+    }
+    return render(request, "html/routes.html", context)
+
+
+def route(request, route_id):
+    route = RoutesModel.objects.all().get(id=route_id)
+    context = {
+        "route": route
+    }
+    return render(request, "html/route.html", context)

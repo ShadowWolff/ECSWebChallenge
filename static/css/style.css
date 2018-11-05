@@ -150,6 +150,10 @@ body{
     min-height: 70vh;
 }
 
+#map_route{
+    min-height: 70vh;
+}
+
 .contact_title{
     text-align: center;
     color: #757575;

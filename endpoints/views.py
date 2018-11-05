@@ -9,7 +9,10 @@ from routes.models import RoutesModel
 def cash_card( request, type, id ):
     data = {
         "cash" : RoutesModel.objects.all().filter(**{ type + "_id" : id }, payment_type="CSH").count(),
-        "card" : RoutesModel.objects.all().filter(**{ type + "_id" : id }, payment_type="CRD").count()
+        "card" : RoutesModel.objects.all().filter(**{ type + "_id" : id }, payment_type="CRD").count(),
+        "dis" : RoutesModel.objects.all().filter(**{ type + "_id" : id }, payment_type="DIS").count(),
+        "noc" : RoutesModel.objects.all().filter(**{ type + "_id" : id }, payment_type="NOC").count(),
+        "unk" : RoutesModel.objects.all().filter(**{ type + "_id" : id }, payment_type="UNK").count(),
     }
 
     json_data = json.dumps( data )
@@ -33,7 +36,9 @@ def nr_of_routes( request, type, id, start = None, finish = None ):
                 pickup_datetime__day   =datetime_as_string.split("-")[2],
             ).count()
     data = {
-        "routes" : dates
+        "routes" : [
+            dates
+        ]
     }
     json_data = json.dumps( data )
     return HttpResponse(json_data, content_type="application/json")
@@ -47,6 +52,8 @@ def car_routes( request, car_id = None ):
     for r in routes:
         routes_json.append(
             {
+                "pickup_datetime" : str( r.pickup_datetime),
+                "dropoff_datetime" : str( r.dropoff_datetime),
                 "pickup_long" : r.pickup_long,
                 "pickup_lat" : r.pickup_lat,
                 "dropoff_long" : r.dropoff_long,

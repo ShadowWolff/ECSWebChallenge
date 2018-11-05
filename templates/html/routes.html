@@ -1,0 +1,22 @@
+{% extends "base_with_sidebar.html" %}
+
+{% block page_content %}
+
+    {% for route in routes  %}
+
+            <div class="col s12 m6 l4">
+              <div class="card driver-card teal darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title">Route #{{ route.id }}</span>
+                    <p> Started at {{ route.pickup_datetime }} </p>
+                    <p> Ended at {{ route.pickup_datetime }} </p>
+                </div>
+                <div class="card-action ">
+                  <a href="{{route.id}}">Check this route</a>
+                </div>
+              </div>
+            </div>
+
+    {% endfor %}
+
+{% endblock %}

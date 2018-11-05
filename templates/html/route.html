@@ -1,0 +1,67 @@
+{% extends "base_with_sidebar.html" %}
+
+{% block page_content %}
+
+    <div class = "row">
+
+        <div class = "col s12">
+            <h2> Route #{{ route.id }} </h2>
+
+
+            <ul class="collection">
+                <a href="/analyze/drivers/{{ route.driver_id }}" class="collection-item"> Driver #{{route.driver_id}} </a>
+                <a href="/analyze/cars/{{ route.car_id }}" class="collection-item"> Car #{{route.car_id}} </a>
+                <li class="collection-item">
+                    <p> Pickup datetime : {{ route.pickup_datetime }} </p>
+                    <p> Dropoff datetime : {{ route.dropoff_datetime }} </p>
+                </li>
+                <li class="collection-item">Price : {{ route.total_amount }} $</li>
+                <li class="collection-item">Passangers : {{ route.passengers }} </li>
+                <li class="collection-item">Distance : {{ route.trip_distance }} Km </li>
+                <li class="collection-item">Duration : {{ route.trip_duration }} sec </li>
+            </ul>
+
+            <div id="map_route"></div>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+
+            var directionsService = new google.maps.DirectionsService;
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+
+            var center = new google.maps.LatLng( {{route.pickup_lat}}, {{route.pickup_long}} );
+            var mapOptions = {
+                zoom: 7,
+                center: center
+            };
+
+            var map = new google.maps.Map(document.getElementById('map_route'), mapOptions);
+            directionsDisplay.setMap(map);
+
+            var start = new google.maps.LatLng( {{route.pickup_lat}}, {{route.pickup_long}} );
+            var end = new google.maps.LatLng( {{route.dropoff_lat}}, {{route.dropoff_long}} );
+
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+
+            directionsService.route(request, function(response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    directionsDisplay.setMap(map);
+                } else {
+                    alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+                }
+            });
+        }
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DoguIu91HZB3c_osKxcVsu2beSDoSDQ&callback=initMap">
+    </script>
+
+{% endblock %}

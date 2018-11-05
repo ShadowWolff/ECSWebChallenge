@@ -1,7 +1,82 @@
 {% extends "base_with_sidebar.html" %}
 
+{% load static %}
 {% block page_content %}
 
+    <div class = "row">
+        <div class = "col s12 chart_graph_container">
+            <svg id = "chart_graph"></svg>
+        </div>
+    </div>
+
+
+    <script src = "{% static 'js/graph_creation.js' %} "></script>
+    <script>
+
+        function create_fr_arr(data, label ){
+            fr_arr = {}
+            for (var i =0; i < data.length; i++ ) {
+                datetime = Date.parse( data[i][label] );
+
+                if( fr_arr[ datetime ] === undefined )
+                    fr_arr[ datetime] = 1
+                else
+                    fr_arr[ datetime]++;
+            }
+            return fr_arr;
+        }
+
+        function build_arr( fr_arr ){
+            arr = [];
+            keys = Object.keys(fr_arr).sort()
+            for( i in keys){
+                key = keys[i];
+                arr.push({
+                    x : key,
+                    y : fr_arr[key]
+                });
+            }
+            return arr;
+        }
+
+        function create_graph( type, url ) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = JSON.parse(this.response)["routes"];
+
+                    fr_arr_p = create_fr_arr(data, "pickup_datetime");
+                    fr_arr_d = create_fr_arr(data, "dropoff_datetime");
+
+                    arr_pick = build_arr( fr_arr_p )
+                    arr_drop = build_arr( fr_arr_d )
+
+                    console.log(arr_pick);
+                    console.log(arr_drop);
+
+                    data_arr = [
+                        {
+                            "values": arr_pick,
+                            "key": "Pickup"
+
+                        },
+
+                        {
+                            "values": arr_drop,
+                            "key": "Dropoff"
+
+                        }
+                    ]
+                    createChartGraph(data_arr, "%d/%m/%y");
+                }
+
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        create_graph("chart", "http://localhost:8000/endpoints/routes");
+    </script>
 
 
 {% endblock %}
