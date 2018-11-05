@@ -54,12 +54,10 @@ with open( "data_final.csv" ) as f:
     for row in csv_reader:
 
         if i != 0:
-            # process(row)
-            np.append(x, float(row[9]))
-            np.append(y, float(row[10]))
+            process(row)
 
         i = i+1
-        if i >10000:
+        if i >100000:
             break
 
 plt.scatter(x,y)
