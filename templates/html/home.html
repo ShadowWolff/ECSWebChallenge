@@ -186,43 +186,45 @@
         <div class = "row">
 
             <div id="map"></div>
-            <script type="text/javascript"
-              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DoguIu91HZB3c_osKxcVsu2beSDoSDQ&libraries=visualization">
-            </script>
+
 
             <!-- change this into another js file -->
             <script>
+                function initMap() {
+                    var uluru = {lat: -25.344, lng: 131.036};
+                    var map = new google.maps.Map(
+                        document.getElementById('map'), {zoom: 4, center: uluru});
+                    var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-            var heatMapData = [
-              {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
-              new google.maps.LatLng(37.782, -122.445),
-              {location: new google.maps.LatLng(37.782, -122.443), weight: 2},
-              {location: new google.maps.LatLng(37.782, -122.441), weight: 3},
-              {location: new google.maps.LatLng(37.782, -122.439), weight: 2},
-              new google.maps.LatLng(37.782, -122.437),
-              {location: new google.maps.LatLng(37.782, -122.435), weight: 0.5},
 
-              {location: new google.maps.LatLng(37.785, -122.447), weight: 3},
-              {location: new google.maps.LatLng(37.785, -122.445), weight: 2},
-              new google.maps.LatLng(37.785, -122.443),
-              {location: new google.maps.LatLng(37.785, -122.441), weight: 0.5},
-              new google.maps.LatLng(37.785, -122.439),
-              {location: new google.maps.LatLng(37.785, -122.437), weight: 2},
-              {location: new google.maps.LatLng(37.785, -122.435), weight: 3}
-            ];
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            data = JSON.parse(this.response)["routes"];
+                            my_markers = []
+                            for( var i = 0; i < data.length; i++ ){
+                                point = new google.maps.LatLng( parseFloat( data[i]["pickup_lat"] ), parseFloat( data[i]["pickup_long"]));
+                                my_markers.push(point)
+                            }
 
-            var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: sanFrancisco,
-                zoom: 13,
-                mapTypeId: 'satellite'
-            });
-
-            var heatmap = new google.maps.visualization.HeatmapLayer({
-                data: heatMapData
-            });
-            heatmap.setMap(map);
-
+                            var markers = my_markers.map(function(location, i) {
+                                return new google.maps.Marker({
+                                    position: location,
+                                    label: labels[i % labels.length]
+                                });
+                            });
+                            var markerCluster = new MarkerClusterer(map, markers,
+                                {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+                        }
+                    };
+                    xhttp.open("GET", "http://localhost:8000/endpoints/routes", true);
+                    xhttp.send(null);
+                }
+            </script>
+            <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2DoguIu91HZB3c_osKxcVsu2beSDoSDQ&callback=initMap">
             </script>
 
         </div>
