@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23e2d51c-19b5-47bc-aa54-8e2077d9433e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/graph_creation.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/graph_creation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/analyze_homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/analyze_homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/cpa.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/cpa.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/ct.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/highest_pay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/driver.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/driver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasight/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasight/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,15 +108,15 @@
     <session id="575224531">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -131,8 +124,9 @@
           <entry key="css" value="12" />
           <entry key="html" value="104" />
           <entry key="js" value="8" />
-          <entry key="py" value="47" />
+          <entry key="py" value="50" />
           <entry key="routes_routesmodel" value="11" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -141,7 +135,8 @@
           <entry key="Database Element" value="11" />
           <entry key="HTML" value="104" />
           <entry key="JavaScript" value="8" />
-          <entry key="Python" value="47" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="50" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -150,7 +145,7 @@
           <entry key="css" value="1719" />
           <entry key="html" value="13284" />
           <entry key="js" value="1355" />
-          <entry key="py" value="6315" />
+          <entry key="py" value="6330" />
           <entry key="sql" value="108" />
         </counts>
       </usages-collector>
@@ -160,7 +155,7 @@
           <entry key="DjangoUrlPath" value="1" />
           <entry key="HTML" value="13284" />
           <entry key="JavaScript" value="1355" />
-          <entry key="Python" value="6314" />
+          <entry key="Python" value="6329" />
           <entry key="SQL" value="108" />
           <entry key="Scratch" value="10" />
         </counts>
@@ -170,19 +165,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/html/highest_pay.html">
+        <entry file="file://$PROJECT_DIR$/datasight/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="582">
-              <caret line="40" column="80" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/html/cpa.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="53" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="53" />
+            <state relative-caret-position="249">
+              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -215,7 +201,6 @@
         <option value="$PROJECT_DIR$/drivers/models.py" />
         <option value="$PROJECT_DIR$/routes/models.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/datasight/settings.py" />
         <option value="$PROJECT_DIR$/static/style.css" />
         <option value="$PROJECT_DIR$/import_data_script.py" />
         <option value="$PROJECT_DIR$/templates/html/top_drivers_earners.html" />
@@ -241,6 +226,7 @@
         <option value="$PROJECT_DIR$/templates/html/cpa.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/html/highest_pay.html" />
+        <option value="$PROJECT_DIR$/datasight/settings.py" />
       </list>
     </option>
   </component>
@@ -261,6 +247,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,41 +258,12 @@
             <path>
               <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
               <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="datasight" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,7 +331,7 @@
     <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20459402" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20673077" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -427,13 +385,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/style.css" />
-    <entry file="file://$PROJECT_DIR$/datasight/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="777">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/import_data_script.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1187">
@@ -543,12 +494,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="e#709#1094#0" />
-            <element signature="e#1136#1469#0" />
-            <element signature="e#1518#2655#0" />
-            <element signature="e#2780#4214#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -570,16 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="126" column="54" selection-start-line="126" selection-start-column="54" selection-end-line="126" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-            <element signature="e#154#222#0" />
-            <element signature="e#251#331#0" />
-            <element signature="e#360#1028#0" />
-            <element signature="e#1067#1402#0" />
-            <element signature="e#1428#2603#0" />
-            <element signature="e#2638#2958#0" />
-            <marker date="1541445427591" expanded="true" signature="3411:3416" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -597,6 +532,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/html/highest_pay.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="80" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/html/cpa.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
@@ -604,10 +546,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/html/highest_pay.html">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datasight/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="582">
-          <caret line="40" column="80" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
+        <state relative-caret-position="249">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
         </state>
       </provider>
     </entry>
