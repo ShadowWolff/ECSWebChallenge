@@ -2,22 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23e2d51c-19b5-47bc-aa54-8e2077d9433e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/html/route.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/html/routes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/endpoints/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/endpoints/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/graph_creation.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/graph_creation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base_with_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_with_sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/all_cars.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/all_cars.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/all_drivers.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/all_drivers.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/html/analyze_homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/analyze_homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/car.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/car.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/ct.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/ct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/html/driver.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/driver.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/html/cpa.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/html/cpa.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +56,7 @@
     <session id="-1487220452">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.3" value="1" />
@@ -83,17 +70,19 @@
           <entry key="csv" value="1" />
           <entry key="django_session" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="html" value="1" />
+          <entry key="html" value="3" />
+          <entry key="js" value="1" />
           <entry key="py" value="6" />
-          <entry key="routes_routesmodel" value="2" />
+          <entry key="routes_routesmodel" value="3" />
           <entry key="sql" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="Database Element" value="3" />
-          <entry key="HTML" value="1" />
+          <entry key="Database Element" value="4" />
+          <entry key="HTML" value="3" />
+          <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Python" value="6" />
           <entry key="Scratch" value="1" />
@@ -103,14 +92,14 @@
         <counts>
           <entry key="css" value="110" />
           <entry key="gitignore" value="18" />
-          <entry key="html" value="296" />
+          <entry key="html" value="1276" />
           <entry key="py" value="4093" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="110" />
-          <entry key="HTML" value="296" />
+          <entry key="HTML" value="1276" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Python" value="4093" />
         </counts>
@@ -172,14 +161,14 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/html/analyze_homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            <state relative-caret-position="1042">
+              <caret line="98" column="59" lean-forward="true" selection-start-line="98" selection-start-column="59" selection-end-line="98" selection-end-column="59" />
               <folding>
-                <element signature="n#script#1;n#!!top" />
+                <element signature="e#349#2542#0" />
               </folding>
             </state>
           </provider>
@@ -221,23 +210,23 @@
         <option value="$PROJECT_DIR$/datasight/urls.py" />
         <option value="$PROJECT_DIR$/templates/endpoints/cash_card.html" />
         <option value="$PROJECT_DIR$/endpoints/urls.py" />
-        <option value="$PROJECT_DIR$/templates/html/cpa.html" />
         <option value="$PROJECT_DIR$/templates/html/home.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/templates/html/all_cars.html" />
         <option value="$PROJECT_DIR$/templates/html/all_drivers.html" />
         <option value="$PROJECT_DIR$/endpoints/views.py" />
-        <option value="$PROJECT_DIR$/static/js/graph_creation.js" />
         <option value="$PROJECT_DIR$/templates/html/car.html" />
         <option value="$PROJECT_DIR$/templates/html/driver.html" />
         <option value="$PROJECT_DIR$/templates/html/routes.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
         <option value="$PROJECT_DIR$/templates/html/route.html" />
         <option value="$PROJECT_DIR$/templates/html/ct.html" />
-        <option value="$PROJECT_DIR$/templates/html/analyze_homepage.html" />
         <option value="$PROJECT_DIR$/routes/views.py" />
         <option value="$PROJECT_DIR$/routes/urls.py" />
         <option value="$PROJECT_DIR$/templates/base_with_sidebar.html" />
+        <option value="$PROJECT_DIR$/templates/html/cpa.html" />
+        <option value="$PROJECT_DIR$/static/js/graph_creation.js" />
+        <option value="$PROJECT_DIR$/templates/html/analyze_homepage.html" />
       </list>
     </option>
   </component>
@@ -258,34 +247,34 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
+              <item name="datasight" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datasight" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
+              <item name="datasight" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datasight" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="datasight" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datasight" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ECSWebChallenge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ECSWebChallenge" type="462c0819:PsiDirectoryNode" />
+              <item name="datasight" type="b2602c69:ProjectViewProjectNode" />
+              <item name="datasight" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,9 +339,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="0" width="1920" height="1080" extended-state="6" />
+    <frame x="134" y="35" width="3706" height="2125" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20245726" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28745162" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -373,7 +362,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32959402" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.17788461" />
+      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.20121615" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,24 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://2c4f82a3-ae82-4a96-92fd-396121342b5f/schema/main/table/routes_routesmodel">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="driver_id=2013027267" />
-            <filter text="driver_id=2013034692" />
-            <filter text="driver_id=2013030894" />
-            <filter text="car_id=2013011197" />
-            <filter text="driver_id=2013005437" />
-            <filter text="car_id=2013005437" />
-            <filter text="payment_type=&quot;NOC&quot;" />
-            <filter text="car_id=2013001304" />
-            <filter text="car_id=2013000901" />
-            <filter text="car_id=2013000021" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/html/all_cars.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -483,24 +454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/graph_creation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="50" selection-start-line="44" selection-start-column="50" selection-end-line="44" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/endpoints/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="55" column="60" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/html/driver.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="97" column="57" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -515,13 +472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="57" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/html/cpa.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="23" column="94" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -558,8 +508,6 @@
             <element signature="e#1067#1402#0" />
             <element signature="e#1428#2603#0" />
             <element signature="e#2638#2958#0" />
-            <marker date="1541418155463" expanded="true" signature="912:917" ph="..." />
-            <marker date="1541418155463" expanded="true" signature="2988:2993" ph="..." />
           </folding>
         </state>
       </provider>
@@ -568,9 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="63" selection-start-line="7" selection-start-column="63" selection-end-line="7" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -578,18 +523,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="107" selection-start-line="18" selection-start-column="107" selection-end-line="18" selection-end-column="107" />
-          <folding>
-            <element signature="n#style#0;n#li#14;n#ul#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2c4f82a3-ae82-4a96-92fd-396121342b5f/schema/main/table/routes_routesmodel">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="driver_id=2013027267" />
+            <filter text="driver_id=2013034692" />
+            <filter text="driver_id=2013030894" />
+            <filter text="car_id=2013011197" />
+            <filter text="driver_id=2013005437" />
+            <filter text="car_id=2013005437" />
+            <filter text="payment_type=&quot;NOC&quot;" />
+            <filter text="car_id=2013001304" />
+            <filter text="car_id=2013000901" />
+            <filter text="car_id=2013000021" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/html/cpa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/html/driver.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="67" selection-start-line="67" selection-end-line="76" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/graph_creation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1711">
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/html/analyze_homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="1042">
+          <caret line="98" column="59" lean-forward="true" selection-start-line="98" selection-start-column="59" selection-end-line="98" selection-end-column="59" />
           <folding>
-            <element signature="n#script#1;n#!!top" />
+            <element signature="e#349#2542#0" />
           </folding>
         </state>
       </provider>

@@ -58,7 +58,6 @@ function createChartGraph( data, date_display )
 
         //Update the chart when window resizes.
         nv.utils.windowResize(chart.update());
-    console.log(chart);
         return chart;
     });
 }

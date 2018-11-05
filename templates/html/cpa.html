@@ -25,35 +25,71 @@
     </script>
 
     <script>
+        function create_graph( url ) {
 
-        // get the center point through kmeans
-        // set the map to the center point
-        var centerPickup = new google.maps.LatLng(37.774546, -122.433523);
-        var centerDrop = new google.maps.LatLng(37.774546, -122.433523);
+            // get the center point through kmeans
+            // set the map to the center point
+            var centerPickup = new google.maps.LatLng(40.756519, -73.975456);
+            var centerDrop = new google.maps.LatLng(40.756519, -73.975456);
 
-        // get the data from endpoints
-        pickupData = []
-        dropData = []
+            // get the data from endpoints
+            pickupData = []
+            dropData = []
 
-        mapPickup = new google.maps.Map(document.getElementById('map_pickup'), {
-          center: centerPickup,
-          zoom: 7,
-        });
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
 
-        mapDrop = new google.maps.Map(document.getElementById('map_drop'), {
-          center: centerDrop,
-          zoom: 7,
-        });
+                    data = JSON.parse(this.response)["routes"];
 
-        var heatmapPick = new google.maps.visualization.HeatmapLayer({
-          data: pickupData
-        });
-        var heatmapDrop = new google.maps.visualization.HeatmapLayer({
-          data: dropData
-        });
+                    for( var i = 0; i < data.length; i++ ){
 
-        heatmapPick.setMap(mapPickup);
-        heatmapDrop.setMap(mapDrop);
+                        console.log(parseFloat( data[i]["pickup_long"] ));
+
+                        pickupPoint = new google.maps.LatLng( parseFloat( data[i]["pickup_lat"] ), parseFloat( data[i]["pickup_long"]));
+                        dropoffPoint = new google.maps.LatLng( parseFloat(data[i]["dropoff_lat"]) , parseFloat(data[i]["dropoff_long"]) );
+
+                        pickupData[i] = pickupPoint;
+                        dropData[i] = dropoffPoint;
+                    }
+
+                }
+            };
+
+            mapPickup = new google.maps.Map(document.getElementById('map_pickup'), {
+              center: centerPickup,
+              zoom: 7,
+              mapTypeId: google.maps.MapTypeId.HYBRID,
+                labels:true
+            });
+
+            mapDrop = new google.maps.Map(document.getElementById('map_drop'), {
+              center: centerDrop,
+              zoom: 7,
+              mapTypeId: google.maps.MapTypeId.HYBRID,
+                labels:true
+
+            });
+
+            var heatmapPick = new google.maps.visualization.HeatmapLayer({
+              data: pickupData,
+                map:mapPickup,
+            });
+            var heatmapDrop = new google.maps.visualization.HeatmapLayer({
+              data: dropData,
+                map:mapDrop,
+            });
+
+            heatmapPick.setMap(heatmapPick.getMap())
+            heatmapDrop.setMap(heatmapDrop.getMap())
+
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+    create_graph( "http://localhost:8000/endpoints/routes");
+
+
     </script>
 
 
